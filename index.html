@@ -12,14 +12,39 @@
   </body>
 </html>
 <script>
+  var current_slide = 0;
   var converter = new Markdown.Converter();
-  $.ajax({
+  var slides = new Array();
+ 	$.ajax({
     url: 'slide.md',
     async: false,   // asynchronous request? (synchronous requests are discouraged...)
     cache: false,   // with this, you can force the browser to not make cache of the retrieved data
     success: function(data) {
       var converted = converter.makeHtml(data);
-      $('.container').html(converted);
+      slides = converted.split('<hr />');
     }
   });
+  function loadSlide ()
+  {
+	  $('.container').html(slides[current_slide]);
+  }
+
+  loadSlide();
+
+	$(document).keydown(function(e){
+    if (e.keyCode == 37) {
+    	if (current_slide>0) {
+    		current_slide--;
+    		loadSlide();
+    	}
+      return false;
+    }
+    if (e.keyCode == 39) {
+    	if (current_slide <= slides.length) {
+    		current_slide++;
+    		loadSlide();
+    	}
+      return false;
+    }
+	});  
 </script>
