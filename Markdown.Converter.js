@@ -7,7 +7,6 @@ else
     
 // The following text is included for historical reasons, but should
 // be taken with a pinch of salt; it's not all true anymore.
-
 //
 // Wherever possible, Showdown is a straight, line-by-line port
 // of the Perl version of Markdown.
