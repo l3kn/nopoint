@@ -6,7 +6,7 @@
 
 Move between slides the with the `<-` and `->` keys.  
 Toggle fullscreen with the `up-arrow` key.  
-Jump back to slide 1 with the `down arrow` key.  
+Jump back to slide 1 with the `down-arrow` key.  
 * * *
 
 # Le fuq is this?
