@@ -9,6 +9,9 @@
     <div class="container">
       
     </div>
+    <div class="count">
+      
+    </div>    
   </body>
 </html>
 <script>
@@ -27,6 +30,8 @@
   function loadSlide ()
   {
 	  $('.container').html(slides[current_slide]);
+    var string = 'Slide ' + (current_slide+1) + ' of ' + slides.length
+    $('.count').html('<p>' +  string + '</p>');
   }
 
   loadSlide();
@@ -40,7 +45,7 @@
       return false;
     }
     if (e.keyCode == 39) {
-    	if (current_slide <= slides.length) {
+    	if (current_slide < slides.length-1) {
     		current_slide++;
     		loadSlide();
     	}

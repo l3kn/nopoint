@@ -18,9 +18,9 @@ html, body
   width:80%; 
 }
 
-.slideCount 
+.count 
 {
-  position: absolute;
+  position: fixed;
   bottom: 1em;
   right: 1em;
 }
