@@ -1,4 +1,4 @@
-/*was sass once, might look stange*/
+/* was sass once, might look strange now */
 
 
 html, body 
@@ -7,6 +7,7 @@ html, body
   border:0;
   padding:0;
   font-family: helvetica;
+  font-size: 30px;
   color: black;
 }
 
@@ -14,7 +15,7 @@ html, body
 {
   padding: 40px;
   margin:auto;
-  width:40em; 
+  width:80%; 
 }
 
 .slideCount 
@@ -48,31 +49,32 @@ a {
     border: none; }
 
 p {
-  margin-bottom: 9px; }
+  margin-bottom: 9px; 
+  font-size: 100%;
+  }
 
 h1, h2, h3, h4, h5, h6 {
   color: #404040;
-  line-height: 36px;
-  margin: 0.67em 0; }
+  margin: 0.4em 0; }
 
 h1 {
   margin-bottom: 18px;
-  font-size: 30px; }
+  font-size: 300%; }
 
 h2 {
-  font-size: 24px; }
+  font-size: 200%; }
 
 h3 {
-  font-size: 18px; }
+  font-size: 175%; }
 
 h4 {
-  font-size: 16px; }
+  font-size: 150%; }
 
 h5 {
-  font-size: 14px; }
+  font-size: 120%; }
 
 h6 {
-  font-size: 13px; }
+  font-size: 110%; }
 
 hr {
   margin: 0 0 19px;
@@ -90,9 +92,8 @@ blockquote {
     font-family: georgia, serif;
     color: #eeeeee; }
   blockquote p {
-    font-size: 14px;
+    font-size: 100%;
     font-weight: 300;
-    line-height: 18px;
     margin-bottom: 0;
     font-style: italic; }
 
@@ -103,7 +104,7 @@ code {
   background-color: #fee9cc;
   color: rgba(0, 0, 0, 0.75);
   padding: 1px 3px;
-  font-size: 12px;
+  font-size: 80%;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
@@ -113,14 +114,13 @@ pre {
   padding: 14px;
   margin: 0 0 18px;
   line-height: 16px;
-  font-size: 11px;
+  font-size: 80%;
   border: 1px solid #d9d9d9;
   white-space: pre-wrap;
   word-wrap: break-word; }
   pre code {
     background-color: white;
     color: #737373;
-    font-size: 11px;
     padding: 0; }
 
 
