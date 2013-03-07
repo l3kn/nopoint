@@ -6,16 +6,15 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div class="container">
-      
-    </div>
-    <div class="count">
-      
-    </div>    
+    <div class="container"></div>
+    <div class="count"></div>    
   </body>
 </html>
 <script>
   var current_slide = 0;
+//  console.log(window.location.search.substr(1));
+//  if(window.location.search != "")
+//    current_slide = window.location.search.substr(1)-1; 
   var converter = new Markdown.Converter();
   var slides = new Array();
  	$.ajax({
@@ -27,6 +26,7 @@
       slides = converted.split('<hr />');
     }
   });
+
   function loadSlide ()
   {
 	  $('.container').html(slides[current_slide]);
@@ -34,7 +34,40 @@
     $('.count').html('<p>' +  string + '</p>');
   }
 
+  function toggleFullscreen() 
+  {
+    var element = document.getElementsByTagName("body")[0];
+   
+    if (element.requestFullScreen) {
+   
+      if (!document.fullScreen) {
+        element.requestFullscreen();
+      } else {
+        document.exitFullScreen();
+      }
+   
+    } else if (element.mozRequestFullScreen) {
+   
+      if (!document.mozFullScreen) {
+        element.mozRequestFullScreen();
+      } else {
+        document.mozCancelFullScreen();
+      }
+   
+    } else if (element.webkitRequestFullScreen) {
+   
+      if (!document.webkitIsFullScreen) {
+        element.webkitRequestFullScreen();
+      } else {
+        document.webkitCancelFullScreen();
+      }
+   
+    }
+   
+  }
+
   loadSlide();
+  toggleFullscreen(); 
 
 	$(document).keydown(function(e){
     if (e.keyCode == 37) {
@@ -44,12 +77,21 @@
     	}
       return false;
     }
-    if (e.keyCode == 39) {
+    else if (e.keyCode == 38) {
+      toggleFullscreen();
+      return false;
+    }    
+    else if (e.keyCode == 39) {
     	if (current_slide < slides.length-1) {
     		current_slide++;
     		loadSlide();
     	}
       return false;
     }
+    else if (e.keyCode == 40) {
+        current_slide = 0;
+        loadSlide();
+      return false;
+    }    
 	});  
 </script>
