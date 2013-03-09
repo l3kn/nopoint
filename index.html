@@ -13,8 +13,7 @@
 <script>
   var current_slide = 0;
 
-  if(isNaN(window.location.search.substr(1)) != 1)
-    current_slide = parseInt(window.location.search.substr(1))-1; 
+
   var converter = new Markdown.Converter();
   var slides = new Array();
 
@@ -27,6 +26,15 @@
       slides = converted.split('<hr />');
     }
   });
+
+  if(isNaN(window.location.search.substr(1)) != 1)
+  {
+    var num = parseInt(window.location.search.substr(1));
+    if(num <= slides.length && num != 0)
+      current_slide = parseInt(window.location.search.substr(1))-1; 
+  }
+
+    
 
   function loadSlide ()
   {
