@@ -12,11 +12,11 @@
 </html>
 <script>
   var current_slide = 0;
-//  console.log(window.location.search.substr(1));
-//  if(window.location.search != "")
-//    current_slide = window.location.search.substr(1)-1; 
+
+
   var converter = new Markdown.Converter();
   var slides = new Array();
+
  	$.ajax({
     url: 'slide.md',
     async: false,   // asynchronous request? (synchronous requests are discouraged...)
@@ -27,12 +27,23 @@
     }
   });
 
+  if(isNaN(window.location.search.substr(1)) != 1)
+  {
+    var num = parseInt(window.location.search.substr(1));
+    if(num <= slides.length && num != 0)
+      current_slide = parseInt(window.location.search.substr(1))-1; 
+  }
+
+    
+
   function loadSlide ()
   {
 	  $('.container').html(slides[current_slide]);
     var string = 'Slide ' + (current_slide+1) + ' of ' + slides.length
     $('.count').html('<p>' +  string + '</p>');
   }
+
+  loadSlide();
 
   function toggleFullscreen() 
   {
@@ -65,9 +76,6 @@
     }
    
   }
-
-  loadSlide();
-  toggleFullscreen(); 
 
 	$(document).keydown(function(e){
     if (e.keyCode == 37) {
