@@ -2,8 +2,10 @@
   <head>
   <title>nopoint</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="Markdown.Converter.js"></script>
+    <script type="text/javascript" src="showdown.js"></script>
+    <script type="text/javascript" src="/prettify/prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/prettify/prettify.css">
   </head>
   <body>
     <div class="container"></div>
@@ -12,9 +14,7 @@
 </html>
 <script>
   var current_slide = 0;
-
-
-  var converter = new Markdown.Converter();
+  var converter = new Showdown.converter();
   var slides = new Array();
 
  	$.ajax({
@@ -22,7 +22,7 @@
     async: false,   // asynchronous request? (synchronous requests are discouraged...)
     cache: false,   // with this, you can force the browser to not make cache of the retrieved data
     success: function(data) {
-      var converted = converter.makeHtml(data);
+      var converted = converter.makeHtml(data).toString();
       slides = converted.split('<hr />');
     }
   });
@@ -33,8 +33,6 @@
     if(num <= slides.length && num != 0)
       current_slide = parseInt(window.location.search.substr(1))-1; 
   }
-
-    
 
   function loadSlide ()
   {
@@ -72,9 +70,7 @@
       } else {
         document.webkitCancelFullScreen();
       }
-   
     }
-   
   }
 
 	$(document).keydown(function(e){
@@ -102,4 +98,20 @@
       return false;
     }    
 	});  
+
+$(document).ready(function() {
+
+    // add prettyprint class to all <pre><code></code></pre> blocks
+    var prettify = false;
+    $("pre code").parent().each(function() {
+        $(this).addClass('prettyprint');
+        prettify = true;
+    });
+
+    // if code blocks were found, bring in the prettifier ...
+    if ( prettify ) {
+        $.getScript("/prettify/prettify.js", function() { prettyPrint() });
+    }
+
+});  
 </script>
