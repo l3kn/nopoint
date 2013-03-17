@@ -124,22 +124,15 @@ code {
   background-color: #fee9cc;
   color: rgba(0, 0, 0, 0.75);
   padding: 1px 3px;
+  padding-left: 0px;
   font-size: 80%;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
 
-pre {
-  display: block;
-  padding: 14px;
-  margin: 0 0 18px;
-  font-size: 80%;
-  border: 1px solid #d9d9d9;
-  white-space: pre-wrap;
-  word-wrap: break-word; }
-  pre code {
-    background-color: white;
-    color: #737373;
-    padding: 0; }
+  .linenums {
+    -webkit-padding-start: 50px;
+  }
+
 
 

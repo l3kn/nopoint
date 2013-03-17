@@ -78,8 +78,7 @@ by Leon Rische
 ## Syntax highlighting
 
 <?prettify lang=css?>
-<pre>
-<code>
+<pre class="prettyprint linenums">
 nav ul {
   margin: 0;
   padding: 0; }
@@ -95,7 +94,6 @@ nav a:hover, nav a:visited {
   color: white; }
 nav li:first-child a {
   margin-left: 0; }
-</code>
 </pre>
 
 
