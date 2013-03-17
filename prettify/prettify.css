@@ -57,7 +57,7 @@ ol.linenums
 {
 	margin-top: 0;
 	margin-bottom: 0;
-	-webkit-padding-start: 50px;
+	-webkit-padding-start: 50px; /*padding fix for font-size*/
 	-moz-padding-start: 50px;
 	-o-padding-start: 50px;
 }
