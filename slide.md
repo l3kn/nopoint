@@ -7,7 +7,7 @@
 
 Move between slides the with the `<-` and `->` keys.  
 Toggle fullscreen with the `up-arrow` key.  
-Jump back to slide 1 with the `down arrow` key.  
+Jump back to slide 1 with the `down-arrow` key.  
 * * *
 
 # Le fuq is this?
@@ -70,4 +70,30 @@ All your content is markdown,
 
 by Leon Rische    
 [website](http://l3kn.de) [twitter](https://twitter.com/l3kn) [flattr](https://flattr.com/profile/l3kn)
+
+* * *
+
+# Area 42
+
+## Syntax highlighting
+
+<?prettify lang=css?>
+<pre class="prettyprint linenums">
+nav ul {
+  margin: 0;
+  padding: 0; }
+nav ul li {
+  display: inline; }
+nav a {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 0;}
+nav a:hover, nav a:visited {
+  color: white; }
+nav li:first-child a {
+  margin-left: 0; }
+</pre>
+
 

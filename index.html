@@ -2,8 +2,11 @@
   <head>
   <title>nopoint</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="Markdown.Converter.js"></script>
+    <script type="text/javascript" src="showdown.js"></script>
+    <script type="text/javascript" src="/prettify/prettify.js"></script>
+    <script type="text/javascript" src="/prettify/lang-css.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="/prettify/prettify.css">
   </head>
   <body>
     <div class="container"></div>
@@ -12,39 +15,34 @@
 </html>
 <script>
   var current_slide = 0;
-
-
-  var converter = new Markdown.Converter();
+  var converter = new Showdown.converter();
   var slides = new Array();
 
  	$.ajax({
     url: 'slide.md',
-    async: false,   // asynchronous request? (synchronous requests are discouraged...)
-    cache: false,   // with this, you can force the browser to not make cache of the retrieved data
-    success: function(data) {
+    async: false, 
+    cache: false,   // stuff will change
+    success: function(data) 
+    {
       var converted = converter.makeHtml(data);
       slides = converted.split('<hr />');
     }
   });
 
-  if(isNaN(window.location.search.substr(1)) != 1)
+  if(isNaN(window.location.search.substr(1)) != 1) // ?slidenum
   {
     var num = parseInt(window.location.search.substr(1));
     if(num <= slides.length && num != 0)
       current_slide = parseInt(window.location.search.substr(1))-1; 
   }
 
-    
-
   function loadSlide ()
   {
 	  $('.container').html(slides[current_slide]);
     var string = 'Slide ' + (current_slide+1) + ' of ' + slides.length
     $('.count').html('<p>' +  string + '</p>');
+    prettyPrint();
   }
-
-  loadSlide();
-
   function toggleFullscreen() 
   {
     var element = document.getElementsByTagName("body")[0];
@@ -72,11 +70,9 @@
       } else {
         document.webkitCancelFullScreen();
       }
-   
     }
-   
   }
-
+  loadSlide();
 	$(document).keydown(function(e){
     if (e.keyCode == 37) {
     	if (current_slide>0) { // show alert
