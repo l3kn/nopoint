@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'commander/import'
+require 'nopoint/version'
 require 'nopoint'
 
 program :name, 'nopoint'
@@ -21,12 +22,11 @@ end
 
 command :serve do |c|
   c.syntax = 'nopoint serve [options]'
-  c.summary = ''
-  c.description = ''
-  c.example 'description', 'command example'
-  c.option '--some-switch', 'Some switch that does something'
+  c.summary = 'Start a webserver'
+  c.description = 'Starts a webserver for the slides public dir'
+
   c.action do |args, options|
-    # Do something or c.when_called Nopoint::Commands::Serve
+    Nopoint::Commands::Serve.process(args, options)
   end
 end
 
