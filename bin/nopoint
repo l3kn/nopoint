@@ -1,0 +1,43 @@
+#!/usr/bin/env ruby
+
+require 'commander/import'
+require 'nopoint'
+
+program :name, 'nopoint'
+program :version, Nopoint::VERSION
+program :description, 'Slideshow generator'
+
+default_command :help
+
+command :new do |c|
+  c.syntax = 'nopoint new PATH [options]'
+  c.summary = 'Scaffold a new Slide'
+  c.description = 'Creates a new Nopoint Slide scaffold in PATH'
+  
+	c.action do |args, options|
+    Nopoint::Commands::New.process(args, options)
+  end
+end
+
+command :serve do |c|
+  c.syntax = 'nopoint serve [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Nopoint::Commands::Serve
+  end
+end
+
+command :build do |c|
+  c.syntax = 'nopoint build [options]'
+  c.summary = ''
+  c.description = ''
+  c.example 'description', 'command example'
+  c.option '--some-switch', 'Some switch that does something'
+  c.action do |args, options|
+    # Do something or c.when_called Nopoint::Commands::Build
+  end
+end
+
