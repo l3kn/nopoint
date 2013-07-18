@@ -16,6 +16,7 @@ require 'coderay'
 # internal
 require 'nopoint/command'
 require 'nopoint/version'
+require 'nopoint/slide'
 
 require_all 'nopoint/commands'
 

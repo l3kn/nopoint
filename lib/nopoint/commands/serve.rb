@@ -10,8 +10,7 @@ module Nopoint
 					:DocumentRoot => root
 				)
 
-				trap 'INT' { server.shutdown }
-
+				trap('INT') { server.shutdown }
 				server.start
 			end
 		end

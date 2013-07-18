@@ -26,7 +26,7 @@ command :serve do |c|
   c.description = 'Starts a webserver for the slides public dir'
 
   c.action do |args, options|
-    Nopoint::Commands::Serve.process(args, options)
+    Nopoint::Commands::Serve.process(options)
   end
 end
 
@@ -37,7 +37,7 @@ command :build do |c|
   c.example 'description', 'command example'
   c.option '--some-switch', 'Some switch that does something'
   c.action do |args, options|
-    # Do something or c.when_called Nopoint::Commands::Build
+    Nopoint::Commands::Build.process(options)
   end
 end
 
