@@ -7,10 +7,10 @@ require 'nopoint/version'
 Gem::Specification.new do |spec|
   spec.name          = 'nopoint'
   spec.version       = Nopoint::VERSION
-  spec.authors       = ['Leon Shure']
-  spec.email         = ['hello@l3kn.de']
-  spec.description   = 'Write a gem description'
-  spec.summary       = 'Write a gem summary'
+  spec.authors       = ['Leon Rische']
+  spec.email         = ['gem@l3kn.de']
+  spec.description   = 'Generate Online-Slideshows from markdown files'
+  spec.summary       = 'Slideshow generator'
   spec.homepage      = ''
   spec.license       = 'MIT'
 
@@ -22,7 +22,7 @@ Gem::Specification.new do |spec|
 	spec.add_runtime_dependency('liquid')
 	spec.add_runtime_dependency('kramdown')
 	spec.add_runtime_dependency('commander')
-	spec.add_runtime_dependency('erubis')
+	spec.add_runtime_dependency('erb')
   
 	spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'

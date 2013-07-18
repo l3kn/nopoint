@@ -1,6 +1,6 @@
 # Nopoint
 
-TODO: Write a gem description
+[![Gem Version](https://badge.fury.io/rb/nopoint.png)](http://badge.fury.io/rb/nopoint)
 
 ## Installation
 
@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+$ nopoint new $name
+$ cd $name
+$ nopoint build
+$ nopoint serve
+```
+
+Then surf to `localhost:2337`
 
 ## Contributing
 
