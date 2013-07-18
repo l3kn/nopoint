@@ -5,7 +5,7 @@ Nopoint
 
 * * *
 
-An Slideshow generator inspired by Jekyll
+A Slideshow generator inspired by Jekyll
 {: .center}
 
 * * *

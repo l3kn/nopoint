@@ -14,8 +14,7 @@ module Nopoint
 
 			def self.create_sample_files(path)
 				FileUtils.cp_r(template + '/.', path)
-				new_dest_path = File.expand_path('public', Dir.pwd)
-				FileUtils.mkdir_p(new_dest_path)
+				FileUtils.mkdir_p(path + '/public/slides')
 			end
 
 			def self.template
