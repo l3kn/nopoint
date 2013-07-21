@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Generate fancy html-slideshows from simple markdown files'
   spec.summary       = 'Slideshow generator'
   spec.homepage      = 'http://nopoint.l3kn.de'
-  spec.license       = 'CC-BY 3.0'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
