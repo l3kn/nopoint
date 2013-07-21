@@ -9,10 +9,10 @@ Gem::Specification.new do |spec|
   spec.version       = Nopoint::VERSION
   spec.authors       = ['Leon Rische']
   spec.email         = ['gem@l3kn.de']
-  spec.description   = 'Generate Online-Slideshows from markdown files'
+  spec.description   = 'Generate fancy html-slideshows from simple markdown files'
   spec.summary       = 'Slideshow generator'
-  spec.homepage      = ''
-  spec.license       = 'MIT'
+  spec.homepage      = 'http://nopoint.l3kn.de'
+  spec.license       = 'CC-BY 3.0'
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
@@ -22,7 +22,6 @@ Gem::Specification.new do |spec|
 	spec.add_runtime_dependency('liquid')
 	spec.add_runtime_dependency('kramdown')
 	spec.add_runtime_dependency('commander')
-	spec.add_runtime_dependency('erb')
   
 	spec.add_development_dependency 'bundler', '~> 1.3'
   spec.add_development_dependency 'rake'
