@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script type="text/javascript" src="/assets/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/main.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+    <header>
+      <h1><%= @chapter_index %> - <%= @title %></h1>
+    </header>
+		<main>
+      <section>
+			  <%= @content %>
+      </section>
+		</main>
+    <footer>
+      <section class="cell-button">
+		  <% if @slide_index > 0 %>
+		  <a id="prev" href="<%= @slide_index - 1 %>.html">&larr;</a>
+	  	<% end %>
+      </section>
+      <section class="cell-center">
+         <p><%= @slide_index+1 %>/<%= @slide_max %></p>
+      </section>
+      <section class="cell-button">
+	  	<% if @slide_index+1 < @slide_max %>
+	  	<a id="next" href="<%= @slide_index + 1 %>.html">&rarr;</a>
+	  	<% end %>
+      </section>
+    </footer>
+	  <script type="text/javascript" src="/assets/s3.min.js"></script>
+	</body>
+</html>

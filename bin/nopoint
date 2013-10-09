@@ -13,7 +13,7 @@ default_command :help
 command :new do |c|
   c.syntax = 'nopoint new PATH [options]'
   c.summary = 'Scaffold a new Slide'
-  c.description = 'Creates a new Nopoint Slide scaffold in PATH'
+  c.description = 'Creates a new Nopoint scaffold at $PATH'
   
 	c.action do |args, options|
     Nopoint::Commands::New.process(args, options)
@@ -23,20 +23,26 @@ end
 command :serve do |c|
   c.syntax = 'nopoint serve [options]'
   c.summary = 'Start a webserver'
-  c.description = 'Starts a webserver for the slides public dir'
-
+  c.description = 'Serve your slideshow locally'
+  
+  c.option '-w', '--watch', 'watch for changes and rebuild'
+   
   c.action do |args, options|
+    # let the build command know that we are serving
+    options.default :serving => true
+    Nopoint::Commands::Build.process(options)
     Nopoint::Commands::Serve.process(options)
   end
 end
 
 command :build do |c|
   c.syntax = 'nopoint build [options]'
-  c.summary = 'Convert to html'
+  c.summary = 'Generate slideshow'
   c.description = 'Converts the slideshow to a static html site'
+  
+  c.option '-w', '--watch', 'watch for changes and rebuild'
   
 	c.action do |args, options|
     Nopoint::Commands::Build.process(options)
   end
 end
-

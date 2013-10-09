@@ -1,2 +1,3 @@
+template: flat
 chapters:
-- intro.md
+- welcome.md

@@ -13,8 +13,7 @@ module Nopoint
 			private
 
 			def self.create_sample_files(path)
-				FileUtils.cp_r(template + '/.', path)
-				FileUtils.mkdir_p(path + '/public/slides')
+				FileUtils.cp_r(self.template + '/.', path)
 			end
 
 			def self.template
